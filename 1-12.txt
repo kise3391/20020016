@@ -1,0 +1,32 @@
+1.
+Lệnh có lỗi cú pháp:
+(90 <= grade <= 100)  ==>  (90 <= grade && grade <= 100)
+Lệnh thực hiện khởi tạo biến isA với giá trị của biểu thức logic là true nếu biến grade nằm trong khoảng 90 - 100.
+
+2. 0
+
+3. Vì giá trị 65536 * 65536 vượt ra ngoài giá trị kiểu long.
+
+4. false
+
+5. Chương trình trả về lỗi.
+
+6.
+- Trình biên dịch báo lỗi biểu thức không hợp lệ.
+- Biến x luôn được khởi tạo là 0.
+
+7.
+0
+0.75
+0.75
+0.75
+
+8. Trình biên dịch báo lỗi khai báo mâu thuẫn.
+
+9. Định danh arg1 trong khối lệnh chỉ tới biến arg1 kiểu char vừa được khởi tạo trong khối.
+
+10. Định danh arg1 khi ra khỏi khối lệnh chỉ tới biến arg1 kiểu int.
+
+11. Chương trình sẽ thực hiện phép tính 5 / 9 và trả về giá trị 0, dẫn đến phép chuyển đổi luôn trả về 0.
+
+12. Here
