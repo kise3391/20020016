@@ -2,42 +2,43 @@
 
 using namespace std;
 
-bool c[8], l[15], r[15];
-char b[8][8];
+bool c[99], l[199], r[199];
+char b[99][99];
 
-void print() {
-    for (int i = 0; i < 8; ++i) {
-        for (int j = 0; j < 8; ++j)
+void print(int n) {
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j)
             cout << b[i][j];
         cout << '\n';
     }
     cout << '\n';
 }
 
-void solve(int i) {
-    if (i == 8) {
-        print();
+void solve(int i, int n) {
+    if (i == n) {
+        print(n);
         return;
     }
-    for (int j = 0; j < 8; ++j) {
-        if (c[j] || l[i - j + 7] || r[i + j - 7]) continue;
+    for (int j = 0; j < n; ++j) {
+        if (c[j] || l[i - j + n - 1] || r[i + j - n + 1]) continue;
         c[j] = true;
-        l[i - j + 7] = true;
-        r[i + j - 7] = true;
+        l[i - j + n - 1] = true;
+        r[i + j - n + 1] = true;
         b[i][j] = '*';
         solve(i + 1);
         b[i][j] = '-';
-        r[i + j - 7] = false;
-        l[i - j + 7] = false;
+        r[i + j - n + 1] = false;
+        l[i - j + n - 1] = false;
         c[j] = false;
     }
 }
 
 int main()
 {
-    for (int i = 0; i < 8; ++i)
-        for (int j = 0; j < 8; ++j)
+    int n; cin >> n;
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < n; ++j)
             b[i][j] = '-';
-    solve(0);
+    solve(0, n);
     return 0;
 }
